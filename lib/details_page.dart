@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_flutter/db/temp_db.dart';
 
 import 'models/models.dart';
 
@@ -17,17 +18,22 @@ class _MovieDetailsState extends State<MovieDetails> {
       body: CustomScrollView(
         slivers:[
           SliverAppBar(
+
+            //pinned: true,
             floating: true,
             expandedHeight: 300,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(widget.movie.name!),
-              background: Image.asset(
-                widget.movie.image!,
-                width: double.maxFinite,
-                height: 300,
-                fit: BoxFit.cover,
+              background: Hero(
+                tag: widget.movie.id!,
+                child: Image.asset(
+                  widget.movie.image!,
+                  width: double.maxFinite,
+                  height: 300,
+                  fit: BoxFit.cover,
 
             ),
+              ),
           ),
         ),
           SliverList(
@@ -44,7 +50,11 @@ class _MovieDetailsState extends State<MovieDetails> {
                     ],
                   ),
                   tileColor: Colors.grey.shade300,
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 8.0),
+                  child: Text(details),
+                ),
               ]),
           )
         ],

@@ -52,11 +52,14 @@ class MovieItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(24),
-            child: Image.asset(
-              movie.image!,
-              width: double.maxFinite,
-              height: double.maxFinite,
-              fit: BoxFit.cover,
+            child: Hero(
+              tag: movie.id!,
+              child: Image.asset(
+                movie.image!,
+                width: double.maxFinite,
+                height: double.maxFinite,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Positioned(
