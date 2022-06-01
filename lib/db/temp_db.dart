@@ -12,6 +12,19 @@ final movieList=[
   Movie(id:6, name: 'Goursthane Sabdhane',subTitle: 'Avg', details: 'Its a good Movie',type: 'Detective',rating: 4.9,image: 'images/m9.jpg'),
   Movie(id:6, name: 'Goursthane Sabdhane',subTitle: 'Avg', details: 'Its a good Movie',type: 'Detective',rating: 4.8,image: 'images/m10.jpg'),
 ];
+const typeList =[
+  'Action',
+  'Action/Sci-Fi',
+  'Action/Thriller',
+  'Comedy',
+  'Romantic',
+  'Documentary',
+  'Drama',
+  'Horror',
+  'Thriller'
+];
+
+
 const details = '''Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor massa id neque aliquam vestibulum. Vitae congue eu consequat ac felis. Auctor augue mauris augue neque gravida. Vestibulum mattis ullamcorper velit sed. Viverra adipiscing at in tellus integer. Consectetur purus ut faucibus pulvinar elementum integer. Tincidunt ornare massa eget egestas purus viverra. Montes nascetur ridiculus mus mauris vitae ultricies leo. Gravida cum sociis natoque penatibus et magnis dis parturient. Ultrices mi tempus imperdiet nulla malesuada pellentesque. Eget aliquet nibh praesent tristique magna sit amet purus gravida.
 
 Elementum eu facilisis sed odio morbi quis. Felis eget velit aliquet sagittis id consectetur purus. Facilisis gravida neque convallis a cras. Blandit turpis cursus in hac habitasse platea dictumst quisque sagittis. Mauris ultrices eros in cursus turpis massa tincidunt dui. Etiam sit amet nisl purus in. Semper auctor neque vitae tempus quam pellentesque nec. Id semper risus in hendrerit. Varius vel pharetra vel turpis nunc eget lorem. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Egestas purus viverra accumsan in.

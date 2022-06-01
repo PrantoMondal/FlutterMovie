@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_flutter/db/temp_db.dart';
 
 class NewMoviePage extends StatefulWidget {
   const NewMoviePage({Key? key}) : super(key: key);
@@ -12,7 +13,8 @@ class _NewMoviePageState extends State<NewMoviePage> {
   final _subtitleController = TextEditingController();
   final _descriptionController = TextEditingController();
   final _ratingController = TextEditingController();
-
+  String? _type;
+  DateTime? _selectedDate;
 
   @override
   void dispose() {
@@ -20,6 +22,7 @@ class _NewMoviePageState extends State<NewMoviePage> {
     _subtitleController.dispose();
     _descriptionController.dispose();
     _ratingController.dispose();
+
   }
 
   @override
@@ -74,6 +77,9 @@ class _NewMoviePageState extends State<NewMoviePage> {
                 if(value == null || value.isEmpty){
                   return 'This field must not be empty';
                 }
+                if(double.parse(value!)<0.0 || double.parse(value)>10.0){
+                  return 'Rating should be between 1.0 to 10.0';
+                }
                 return null;
               },
             ),
@@ -94,6 +100,18 @@ class _NewMoviePageState extends State<NewMoviePage> {
               },
             ),
             const SizedBox(height: 5,),
+            DropdownButtonFormField<String>(
+              hint: Text('Select movie category'),
+              value: _type,
+                items: typeList.map((type) => DropdownMenuItem(
+                    child: Text(type),
+                  value: type,
+                )
+                ).toList(),
+                onChanged: (value){
+                _type = value;
+                }
+            )
           ],
         ),
       ),
