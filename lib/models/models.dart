@@ -6,6 +6,7 @@ class Movie{
   String? type;
   String? image;
   double? rating;
+  int? releaseDate;
 
   Movie(
       {this.id,
@@ -14,5 +15,6 @@ class Movie{
       this.details,
       this.type,
       this.image,
-      this.rating});
+      this.rating,
+      this.releaseDate});
 }

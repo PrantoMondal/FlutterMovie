@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_flutter/db/temp_db.dart';
 import 'package:movie_app_flutter/details_page.dart';
+import 'package:movie_app_flutter/new_movie_page.dart';
 
 import 'models/models.dart';
 
@@ -15,7 +16,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Movie List'),),
+      appBar: AppBar(
+        title: Text('Movie List'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => NewMoviePage())),
+            
+          )
+        ],
+      ),
+
         body: GridView.count(
           crossAxisCount: 2,
           childAspectRatio: 0.7,
